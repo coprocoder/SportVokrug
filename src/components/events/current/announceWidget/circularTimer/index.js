@@ -8,7 +8,7 @@ import "react-circular-progressbar/dist/styles.css";
 
 import "./index.scss";
 
-const Timer = ({endTime, config}) => {
+const CircularTimer = ({endTime, config}) => {
   const [value, setValue] = useState(calcProgressValue());
 
   useEffect(() => {
@@ -82,4 +82,4 @@ export const TimerModes = {
   },
 };
 
-export default Timer;
+export default CircularTimer;

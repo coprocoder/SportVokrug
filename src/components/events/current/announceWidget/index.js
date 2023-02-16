@@ -1,16 +1,15 @@
 import React, {useEffect, useState} from "react";
 
-import Timer, {TimerModes} from "./circularTimer";
+import CircularTimer, {TimerModes} from "./circularTimer";
+import EventStartedPlug from "./startedPlug";
 
 import "./index.scss";
-import EventStartedPlug from "./startedPlug";
 
 const AnnounceWidget = ({eventInfo}) => {
   const [isStarted, setStarted] = useState(checkStatus());
 
   function checkStatus() {
-    // TODO: set <
-    return new Date() > new Date(eventInfo.dt_start);
+    return new Date() < new Date(eventInfo.dt_start);
   }
 
   useEffect(() => {
@@ -24,10 +23,16 @@ const AnnounceWidget = ({eventInfo}) => {
     <div className="announceWidget">
       {isStarted ? (
         <div className="announceWidget-timers">
-          <Timer endTime={eventInfo.dt_end} config={TimerModes.DAY} />
-          <Timer endTime={eventInfo.dt_end} config={TimerModes.HOUR} />
-          <Timer endTime={eventInfo.dt_end} config={TimerModes.MINUTE} />
-          <Timer endTime={eventInfo.dt_end} config={TimerModes.SECOND} />
+          <CircularTimer endTime={eventInfo.dt_end} config={TimerModes.DAY} />
+          <CircularTimer endTime={eventInfo.dt_end} config={TimerModes.HOUR} />
+          <CircularTimer
+            endTime={eventInfo.dt_end}
+            config={TimerModes.MINUTE}
+          />
+          <CircularTimer
+            endTime={eventInfo.dt_end}
+            config={TimerModes.SECOND}
+          />
         </div>
       ) : (
         <EventStartedPlug />

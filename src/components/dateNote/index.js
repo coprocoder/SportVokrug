@@ -20,6 +20,7 @@ const DateNote = ({dtStart = new Date().toISOString(), dtEnd = dtStart}) => {
     let dateEnd = isoToLocaleDate(dtEnd);
     let timeLabel = dateStart.toLocaleDateString();
 
+    // Check time range
     if (dateStart !== dateEnd) {
       let dateOptions = {};
       if (dateStart.getMonth() - dateEnd.getMonth()) {
