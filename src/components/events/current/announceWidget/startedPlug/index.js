@@ -6,7 +6,7 @@ import "./index.scss";
 const EventStartedPlug = () => {
   return (
     <div className="startedPlug">
-      <div className="startedPlug-label">ИДЁТ СЕЙЧАС</div>
+      <div className="startedPlug-label">ИДЕТ СЕЙЧАС</div>
       <ClockLogo className="startedPlug-icon" />
     </div>
   );

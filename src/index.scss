@@ -2,6 +2,26 @@ body {
   margin: 0;
   font-family: "Open Sans", sans-serif;
 
+  overflow-x: hidden;
+  overflow-y: overlay;
+  ::-webkit-scrollbar {
+    display: none;
+  }
+
   background-color: #12203e;
   color: #ffffff;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  &-track {
+    background: transparent;
+  }
+  &-thumb {
+    border-radius: 4px;
+    background: var(--grayTransparent);
+    &:hover {
+      background: var(--gray);
+    }
+  }
 }

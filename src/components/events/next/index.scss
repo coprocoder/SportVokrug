@@ -1,3 +1,5 @@
+@import "../../../Text.scss";
+
 .eventNext {
     width: 100%;
     display: flex;
@@ -5,9 +7,10 @@
     align-items: center;
     justify-items: center;
 
-    margin: 3em 0;
+    margin: 4em 0;
 
     .eventNext-title {
-        font-weight: bold;
+        @include setFontSize(4);
+        @include setEventTitle();
     }
 }

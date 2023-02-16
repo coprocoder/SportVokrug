@@ -14,32 +14,37 @@ const Timer = ({endTime, config}) => {
   useEffect(() => {
     setInterval(() => {
       setValue(calcProgressValue());
-    }, config.interval);
+    }, 1000);
   }, [endTime, config]);
 
   function calcProgressValue() {
     const deltaMs = new Date(endTime) - new Date();
-    let resValue = 0;
+    let usefulTime = 0;
+    let progress = 0;
     if (config === TimerModes.DAY) {
-      const deltaDay = deltaMs / config.interval;
-      resValue = deltaDay;
+      usefulTime = deltaMs % (TimerModes.DAY.interval * 7);
+      progress = (usefulTime / (TimerModes.DAY.interval * 7)) * 100;
     } else if (config === TimerModes.HOUR) {
-      const deltaDay = (deltaMs % TimerModes.DAY.interval) / config.interval;
-      resValue = deltaDay;
+      usefulTime = deltaMs % TimerModes.DAY.interval;
+      progress = (usefulTime / TimerModes.DAY.interval) * 100;
     } else if (config === TimerModes.MINUTE) {
-      const deltaDay = (deltaMs % TimerModes.HOUR.interval) / config.interval;
-      resValue = deltaDay;
+      usefulTime = deltaMs % TimerModes.HOUR.interval;
+      progress = (usefulTime / TimerModes.HOUR.interval) * 100;
     } else if (config === TimerModes.SECOND) {
-      const deltaDay = (deltaMs % TimerModes.MINUTE.interval) / config.interval;
-      resValue = deltaDay;
+      usefulTime = deltaMs % TimerModes.MINUTE.interval;
+      progress = (usefulTime / TimerModes.MINUTE.interval) * 100;
     }
-    return resValue;
+
+    return {
+      progress: progress,
+      number: Math.floor(usefulTime / config.interval),
+    };
   }
 
   return (
     <div className="circularTimer">
       <CircularProgressbarWithChildren
-        value={value}
+        value={value.progress}
         styles={buildStyles({
           textColor: "red",
           pathColor: config.lineColor,
@@ -47,7 +52,7 @@ const Timer = ({endTime, config}) => {
         })}
         counterClockwise
       >
-        <div className="circularTimer-value">{Math.floor(value)}</div>
+        <div className="circularTimer-value">{value.number}</div>
         <div className="circularTimer-label">{config.label}</div>
       </CircularProgressbarWithChildren>
     </div>

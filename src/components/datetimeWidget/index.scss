@@ -13,8 +13,8 @@
 
         @include setFontSize(1);
         font-weight: bold;
-        letter-spacing: 0.1em;
         line-height: 1.5em;
+        letter-spacing: 0.1em;
     }
 
     .date {
@@ -28,6 +28,7 @@
         @include setFontSize(3);
         font-weight: bold;
         line-height: 1.5em;
+        letter-spacing: 0.05em;
 
         & > * {
             display: flex;
@@ -37,11 +38,12 @@
 
     &.datetime-mini {
         background-color: transparent;
-        margin: 3em 0;
+        margin: 4em 0;
 
         .time {
             background-color: transparent;
             line-height: 1em;
+            padding: 0;
         }
 
         .date {
