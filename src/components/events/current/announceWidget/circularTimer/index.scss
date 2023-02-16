@@ -1,0 +1,13 @@
+@import "../../../../../Text.scss";
+
+.circularTimer {
+    height: 8em;
+    width: 8em;
+    margin: 1em;
+    .circularTimer-value {
+        font-weight: bold;
+        @include setFontSize(2);
+    }
+    .circularTimer-label {
+    }
+}

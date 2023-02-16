@@ -1,0 +1,19 @@
+.startedPlug {
+    display: inline-flex;
+    flex-direction: row;
+    font-weight: 600;
+    padding: 0.8rem 2rem;
+    align-items: center;
+
+    background-color: #3d8d44;
+    border: 1px solid #2c7c33;
+    border-radius: 0.5em;
+
+    .startedPlug-label {
+        margin-right: 1em;
+    }
+    .startedPlug-icon {
+        width: auto;
+        height: 2em;
+    }
+}

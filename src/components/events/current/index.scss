@@ -1,0 +1,27 @@
+@import "../../../Text.scss";
+
+.eventCurrent {
+    background-color: #1e3465;
+
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-items: center;
+
+    padding: 1rem 0;
+
+    .eventCurrent-content {
+        width: 100%;
+        max-width: 65%;
+        .eventCurrent-date {
+            margin: 1em 0 0.5em 0;
+        }
+        .eventCurrent-title {
+            @include setFontSize(2);
+            font-weight: bold;
+            text-align: center;
+            margin: 0.5rem 0 2em 0;
+        }
+    }
+}

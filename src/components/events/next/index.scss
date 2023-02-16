@@ -1,0 +1,13 @@
+.eventNext {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-items: center;
+
+    margin: 3em 0;
+
+    .eventNext-title {
+        font-weight: bold;
+    }
+}

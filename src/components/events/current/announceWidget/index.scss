@@ -1,0 +1,10 @@
+@import "../../../../Text.scss";
+
+.announceWidget {
+    display: flex;
+    justify-content: center;
+    .announceWidget-timers {
+        display: flex;
+        flex-direction: row;
+    }
+}
