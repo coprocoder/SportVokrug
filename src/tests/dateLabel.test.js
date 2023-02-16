@@ -1,5 +1,5 @@
 import {render} from "@testing-library/react";
-import DateLabel from ".";
+import DateLabel from "../components/dateLabel";
 
 /**
  * Date label tests

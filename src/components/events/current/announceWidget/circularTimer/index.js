@@ -8,37 +8,33 @@ import "react-circular-progressbar/dist/styles.css";
 
 import "./index.scss";
 
-const CircularTimer = ({endTime, config}) => {
+const CircularTimer = ({startTime, config}) => {
   const [value, setValue] = useState(calcProgressValue());
 
   useEffect(() => {
     setInterval(() => {
       setValue(calcProgressValue());
     }, 1000);
-  }, [endTime, config]);
+  }, [startTime, config]);
 
   function calcProgressValue() {
-    const deltaMs = new Date(endTime) - new Date();
-    let usefulTime = 0;
-    let progress = 0;
+    const deltaMs = new Date(startTime) - new Date();
+    let fullCircleInterval = 0;
     if (config === TimerModes.DAY) {
-      usefulTime = deltaMs % (TimerModes.DAY.interval * 7);
-      progress = (usefulTime / (TimerModes.DAY.interval * 7)) * 100;
+      fullCircleInterval = TimerModes.DAY.interval * 7;
     } else if (config === TimerModes.HOUR) {
-      usefulTime = deltaMs % TimerModes.DAY.interval;
-      progress = (usefulTime / TimerModes.DAY.interval) * 100;
+      fullCircleInterval = TimerModes.DAY.interval;
     } else if (config === TimerModes.MINUTE) {
-      usefulTime = deltaMs % TimerModes.HOUR.interval;
-      progress = (usefulTime / TimerModes.HOUR.interval) * 100;
+      fullCircleInterval = TimerModes.HOUR.interval;
     } else if (config === TimerModes.SECOND) {
-      usefulTime = deltaMs % TimerModes.MINUTE.interval;
-      progress = (usefulTime / TimerModes.MINUTE.interval) * 100;
+      fullCircleInterval = TimerModes.MINUTE.interval;
     }
 
-    return {
-      progress: progress,
-      number: Math.floor(usefulTime / config.interval),
-    };
+    let usefulTime = deltaMs % fullCircleInterval;
+    let progress = (usefulTime / fullCircleInterval) * 100;
+    const number = Math.floor(usefulTime / config.interval);
+
+    return {progress, number};
   }
 
   return (
@@ -49,6 +45,7 @@ const CircularTimer = ({endTime, config}) => {
           textColor: "red",
           pathColor: config.lineColor,
           trailColor: "transparent",
+          strokeLinecap: "butt",
         })}
         counterClockwise
       >

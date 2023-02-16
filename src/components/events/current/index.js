@@ -6,8 +6,6 @@ import AnnounceWidget from "./announceWidget";
 import "./index.scss";
 
 const CurrentEventWidget = ({eventInfo}) => {
-  console.log({eventInfo});
-
   return (
     <div className="eventCurrent">
       <div className="eventCurrent-content">

@@ -23,14 +23,20 @@ const AnnounceWidget = ({eventInfo}) => {
     <div className="announceWidget">
       {isStarted ? (
         <div className="announceWidget-timers">
-          <CircularTimer endTime={eventInfo.dt_end} config={TimerModes.DAY} />
-          <CircularTimer endTime={eventInfo.dt_end} config={TimerModes.HOUR} />
           <CircularTimer
-            endTime={eventInfo.dt_end}
+            startTime={eventInfo.dt_start}
+            config={TimerModes.DAY}
+          />
+          <CircularTimer
+            startTime={eventInfo.dt_start}
+            config={TimerModes.HOUR}
+          />
+          <CircularTimer
+            startTime={eventInfo.dt_start}
             config={TimerModes.MINUTE}
           />
           <CircularTimer
-            endTime={eventInfo.dt_end}
+            startTime={eventInfo.dt_start}
             config={TimerModes.SECOND}
           />
         </div>
