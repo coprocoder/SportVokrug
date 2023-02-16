@@ -9,31 +9,26 @@ const DateLabel = ({dtStart = new Date().toISOString(), dtEnd = dtStart}) => {
   }, [dtStart, dtEnd]);
 
   function genTimeLabel() {
-    const isoToLocaleDate = (isoDate) => {
-      const _date = new Date(isoDate);
-      const offsetMs = _date.getTimezoneOffset() * 60 * 1000;
-      const msLocal = _date.getTime() - offsetMs;
-      return new Date(msLocal);
-    };
-
-    let dateStart = isoToLocaleDate(dtStart);
-    let dateEnd = isoToLocaleDate(dtEnd);
-    let timeLabel = dateStart.toLocaleDateString();
+    let dateStart = new Date(dtStart);
+    let dateEnd = new Date(dtEnd);
+    let timeLabel = dateStart.toLocaleDateString("ru-RU");
 
     // Check time range
-    if (dateStart !== dateEnd) {
-      let dateOptions = {};
-      if (dateStart.getMonth() - dateEnd.getMonth()) {
-        dateOptions = {
+    if (dateStart.toDateString() !== dateEnd.toDateString()) {
+      let dateFormatOptions = {};
+      if (dateStart.getFullYear() - dateEnd.getFullYear()) {
+        dateFormatOptions = {};
+      } else if (dateEnd.getMonth() - dateStart.getMonth()) {
+        dateFormatOptions = {
           day: "numeric",
           month: "numeric",
         };
-      } else if (dateStart.getDay() - dateEnd.getDay()) {
-        dateOptions = {
+      } else if (dateEnd.getDate() - dateStart.getDate()) {
+        dateFormatOptions = {
           day: "numeric",
         };
       }
-      const _dStart = dateStart.toLocaleDateString("ru-RU", dateOptions);
+      const _dStart = dateStart.toLocaleDateString("ru-RU", dateFormatOptions);
       const _dEnd = dateEnd.toLocaleDateString("ru-RU");
       timeLabel = `${_dStart}-${_dEnd}`;
     }
