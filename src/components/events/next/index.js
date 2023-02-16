@@ -1,6 +1,6 @@
 import React from "react";
 
-import DateNote from "../../dateNote";
+import DateNote from "../../dateLabel";
 
 import "./index.scss";
 

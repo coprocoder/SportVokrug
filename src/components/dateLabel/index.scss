@@ -1,4 +1,7 @@
-.dateNote {
+@import "../../Text.scss";
+
+.dateLabel {
+    @include setFontSize(5);
     font-weight: bold;
     color: var(--textSecondary);
     text-align: center;

@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from "react";
 import "./index.scss";
 
-const DateNote = ({dtStart = new Date().toISOString(), dtEnd = dtStart}) => {
+const DateLabel = ({dtStart = new Date().toISOString(), dtEnd = dtStart}) => {
   const [timeLabel, setTimeLabel] = useState(dtStart);
 
   useEffect(() => {
@@ -26,7 +26,7 @@ const DateNote = ({dtStart = new Date().toISOString(), dtEnd = dtStart}) => {
       if (dateStart.getMonth() - dateEnd.getMonth()) {
         dateOptions = {
           day: "numeric",
-          month: "long",
+          month: "numeric",
         };
       } else if (dateStart.getDay() - dateEnd.getDay()) {
         dateOptions = {
@@ -41,7 +41,7 @@ const DateNote = ({dtStart = new Date().toISOString(), dtEnd = dtStart}) => {
     return timeLabel;
   }
 
-  return <div className="dateNote">{timeLabel}</div>;
+  return <div className="dateLabel">{timeLabel}</div>;
 };
 
-export default DateNote;
+export default DateLabel;

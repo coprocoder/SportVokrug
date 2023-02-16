@@ -1,7 +1,7 @@
 @import "./Functions.scss";
 
 html {
-    font-size: calcFluidSize(10, 16, 320, 1280);
+    font-size: calcFluidSize(10, 15, 320, 1280);
 }
 body {
     font-family: "Open Sans", sans-serif;
@@ -16,9 +16,11 @@ body {
     } @else if ($fontSize == 2) {
         $currentFontSize: calcFluidSize(2.07, 2.2, 320, 1280, rem);
     } @else if ($fontSize == 3) {
-        $currentFontSize: calcFluidSize(1.69, 1.8, 320, 1280, rem);
+        $currentFontSize: calcFluidSize(1.6, 1.7, 320, 1280, rem);
     } @else if ($fontSize == 4) {
         $currentFontSize: calcFluidSize(1.32, 1.4, 320, 1280, rem);
+    } @else if ($fontSize == 5) {
+        $currentFontSize: calcFluidSize(0.92, 0.98, 320, 1280, rem);
     }
 
     font-size: $currentFontSize;
