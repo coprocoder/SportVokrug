@@ -11,6 +11,6 @@
 
     .eventNext-title {
         @include setFontSize(4);
-        @include setEventTitle();
+        @include styleAndCropEventTitle();
     }
 }

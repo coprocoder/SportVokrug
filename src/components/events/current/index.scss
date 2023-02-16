@@ -18,9 +18,8 @@
             margin: 1em 0 0.5em 0;
         }
         .eventCurrent-title {
-            margin: 0.5rem 0 2em 0;
             @include setFontSize(2);
-            @include setEventTitle();
+            @include styleAndCropEventTitle(2);
         }
     }
 }
