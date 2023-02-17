@@ -14,12 +14,14 @@ body {
     @if ($fontSize == 1) {
         $currentFontSize: calcFluidSize(4.7, 5, 320, 1280, rem);
     } @else if ($fontSize == 2) {
-        $currentFontSize: calcFluidSize(2.07, 2.2, 320, 1280, rem);
+        $currentFontSize: calcFluidSize(2.25, 2.4, 320, 1280, rem);
     } @else if ($fontSize == 3) {
-        $currentFontSize: calcFluidSize(1.6, 1.7, 320, 1280, rem);
+        $currentFontSize: calcFluidSize(2.07, 2.2, 320, 1280, rem);
     } @else if ($fontSize == 4) {
-        $currentFontSize: calcFluidSize(1.32, 1.4, 320, 1280, rem);
+        $currentFontSize: calcFluidSize(1.6, 1.7, 320, 1280, rem);
     } @else if ($fontSize == 5) {
+        $currentFontSize: calcFluidSize(1.32, 1.4, 320, 1280, rem);
+    } @else if ($fontSize == 6) {
         $currentFontSize: calcFluidSize(0.92, 0.98, 320, 1280, rem);
     }
 

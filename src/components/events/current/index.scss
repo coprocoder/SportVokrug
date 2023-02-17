@@ -9,17 +9,15 @@
     align-items: center;
     justify-items: center;
 
-    padding: 1rem 0;
+    padding: 2rem 0;
 
     .eventCurrent-content {
         width: 100%;
         max-width: 65%;
-        .eventCurrent-date {
-            margin: 1.5em 0 0.5em 0;
-        }
         .eventCurrent-title {
-            @include setFontSize(2);
+            @include setFontSize(3);
             @include styleAndCropEventTitle(2);
+            margin-bottom: 1em;
         }
     }
 }

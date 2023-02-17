@@ -28,13 +28,20 @@ function App() {
   useEffect(() => {
     getData().then((res) => {
       const events = res?.data?.videostandEvents?.current_and_upcoming || [];
-      console.log(events);
       setEvents(events);
     });
+
+    const handleResize = () => {
+      let vh = window.innerHeight * 0.01;
+      document.documentElement.style.setProperty("--vh", `${vh}px`);
+    };
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
 
   return (
-    <div className={`App ${hasEvents ? "App-inited" : "App-empty "}`}>
+    <div className="App">
       <DatetimeWidget hasEvents={hasEvents} />
       {events.length > 0 && <CurrentEventWidget eventInfo={events[0]} />}
       {events.length > 1 && <NextEventWidget eventInfo={events[1]} />}

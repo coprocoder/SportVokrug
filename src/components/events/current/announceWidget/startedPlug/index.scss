@@ -5,7 +5,7 @@
     flex-direction: row;
     font-weight: 600;
     padding: 1em 3.2em;
-    margin: 3.5em 0 2.5em 0;
+    margin: 2.5em 0;
     align-items: center;
 
     background-color: #3d8d44;
@@ -14,7 +14,7 @@
 
     .startedPlug-label {
         margin-right: 0.8em;
-        @include setFontSize(3);
+        @include setFontSize(4);
     }
     .startedPlug-icon {
         width: auto;

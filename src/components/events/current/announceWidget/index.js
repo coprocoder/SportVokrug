@@ -17,6 +17,8 @@ const AnnounceWidget = ({eventInfo}) => {
       const started = checkStatus();
       if (started !== isStarted) setStarted(started);
     }, 1000);
+    // TODO: remove
+    eventInfo.dt_start = "2023-02-23T10:00:00+03:00"
   }, [eventInfo]);
 
   return (

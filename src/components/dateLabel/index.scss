@@ -1,7 +1,7 @@
 @import "../../Text.scss";
 
 .dateLabel {
-    @include setFontSize(5);
+    @include setFontSize(6);
     font-weight: bold;
     color: var(--textSecondary);
     text-align: center;
