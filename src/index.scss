@@ -1,15 +1,19 @@
+html,
 body {
   margin: 0;
-  font-family: "Open Sans", sans-serif;
+  overscroll-behavior: none;
+  background-color: #12203e;
+  * {
+    color: var(--textPrimary);
+  }
+}
 
+body {
   overflow-x: hidden;
   overflow-y: overlay;
   ::-webkit-scrollbar {
     display: none;
   }
-
-  background-color: #12203e;
-  color: #ffffff;
 }
 
 ::-webkit-scrollbar {
@@ -24,4 +28,10 @@ body {
       background: var(--gray);
     }
   }
+}
+
+*,
+:after,
+:before {
+  box-sizing: border-box;
 }

@@ -17,7 +17,7 @@
         .eventCurrent-title {
             @include setFontSize(3);
             @include styleAndCropEventTitle(2);
-            margin-bottom: 1em;
+            margin-bottom: 0.5em;
         }
     }
 }
