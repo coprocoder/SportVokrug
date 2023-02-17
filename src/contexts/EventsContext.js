@@ -27,7 +27,6 @@ const EventsProvider = ({children}) => {
       }),
     });
     const res = await response.json();
-    console.log("== updateEventsFromAPI", res);
     const events = res?.data?.videostandEvents?.current_and_upcoming || [];
     setEvents(events);
   }
