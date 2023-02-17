@@ -1,14 +1,14 @@
 @import "../../../Text.scss";
 
 .eventNext {
-    width: 100%;
     display: flex;
     flex-direction: column;
     flex: 1;
     place-content: center;
     align-items: center;
 
-    margin: 2rem 0;
+    // For separate on mobile
+    padding: 2rem 0;
 
     .eventNext-title {
         @include setFontSize(5);

@@ -3,9 +3,6 @@ body {
   margin: 0;
   overscroll-behavior: none;
   background-color: #12203e;
-  * {
-    color: var(--textPrimary);
-  }
 }
 
 body {
@@ -23,9 +20,9 @@ body {
   }
   &-thumb {
     border-radius: 4px;
-    background: var(--grayTransparent);
+    background: rgba(120, 120, 120, 0.2);
     &:hover {
-      background: var(--gray);
+      background: rgb(120, 120, 120);
     }
   }
 }

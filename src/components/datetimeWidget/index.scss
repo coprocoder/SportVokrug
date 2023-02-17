@@ -39,7 +39,8 @@
     &.datetime-mini {
         background-color: transparent;
 
-        margin: 2rem 0;
+        // For separate on mobile
+        padding: 2rem 0;
 
         display: flex;
         flex: 1;
