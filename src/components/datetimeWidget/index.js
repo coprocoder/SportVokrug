@@ -4,7 +4,7 @@ import "./index.scss";
 
 const DatetimeWidget = ({hasEvents}) => {
   return (
-    <div className={`datetime ${hasEvents ? "datetime-mini" : ""}`}>
+    <div className={`datetime ${hasEvents ? "datetime-mini" : "datetime-full"}`}>
       <TimeComponent />
       <DateComponent />
     </div>
