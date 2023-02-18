@@ -3,6 +3,8 @@
 .announceWidget {
     display: flex;
     justify-content: center;
+    align-items: center;
+    min-height: 10rem;
     .announceWidget-timers {
         display: flex;
         flex-direction: row;
