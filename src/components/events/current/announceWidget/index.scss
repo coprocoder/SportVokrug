@@ -4,11 +4,12 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 10rem;
+    min-height: 8rem;
     .announceWidget-timers {
         display: flex;
         flex-direction: row;
         justify-content: center;
         flex-wrap: wrap;
+        column-gap: 1rem;
     }
 }
