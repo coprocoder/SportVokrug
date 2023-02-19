@@ -1,5 +1,6 @@
 {
   "name": "sportaround",
+  "homepage": "SportVokrug",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
