@@ -1,6 +1,10 @@
-![Alt text](/static/images/Screenshot.png "Optional title")
+![Alt text](/public/static/images/Screenshot.png "Screenshot")
 
 ## ОПИСАНИЕ
+
+Доска событий
+1. Автообновление данных с сервера
+2. Мониторинг текущих событий и оповещение с таймером
 
 <h4>Стек технологий:</h4>
 <ul>
