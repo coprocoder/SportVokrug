@@ -20,12 +20,12 @@ const DateLabel = ({dtStart = new Date().toISOString(), dtEnd = dtStart}) => {
         dateFormatOptions = {};
       } else if (dateEnd.getMonth() - dateStart.getMonth()) {
         dateFormatOptions = {
-          day: "numeric",
-          month: "numeric",
+          day: "2-digit",
+          month: "2-digit",
         };
       } else if (dateEnd.getDate() - dateStart.getDate()) {
         dateFormatOptions = {
-          day: "numeric",
+          day: "2-digit",
         };
       }
       const _dStart = dateStart.toLocaleDateString("ru-RU", dateFormatOptions);
