@@ -3,6 +3,7 @@
 ## ОПИСАНИЕ
 
 Доска событий
+
 1. Автообновление данных с сервера
 2. Мониторинг текущих событий и оповещение с таймером
 
@@ -22,30 +23,24 @@
 node -v
 ```
 
-Если пакета нет, выполните установку
-
-### Установка на Ubuntu
+### Установка NodeJS на Ubuntu
 
 ```
 sudo apt-get update
 sudo apt-get upgrade
 sudo apt install nodejs
 sudo apt install npm
-git clone https://github.com/coprocoder/vue-todo.git
+git clone https://coprocoder.github.io/SportVokrug/
 ```
 
-### Установка на Windows
+### Установка NodeJS на Windows
 
 - Скачайте [установочный файл](https://nodejs.org), запустите его и выполните все шаги установки.
-- Скачайте исходный код приложения из репозитория:
+
+### Установка проекта
 
 ```
 git clone https://github.com/coprocoder/SportVokrug.git
-```
-
-### Установка зависимостей проекта
-
-```
 cd <путь до папки проекта>
 npm install (или yarn)
 ```
