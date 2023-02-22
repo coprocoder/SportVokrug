@@ -13,6 +13,7 @@
 	<li>React</li>
  </ul>
 
+Демо: https://coprocoder.github.io/SportVokrug/
 Макет: https://marvelapp.com/prototype/ifc07ih/screen/88547090/handoff
 
 ## УСТАНОВКА
