@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/SportVorkug/static/css/main.8e9f8c24.css",
-    "main.js": "/SportVorkug/static/js/main.14ab232a.js",
-    "static/js/787.bf4ab41e.chunk.js": "/SportVorkug/static/js/787.bf4ab41e.chunk.js",
-    "index.html": "/SportVorkug/index.html",
-    "static/media/clock.svg": "/SportVorkug/static/media/clock.1a0157c1a6c2b970308506ececd752fd.svg",
-    "main.8e9f8c24.css.map": "/SportVorkug/static/css/main.8e9f8c24.css.map",
-    "main.14ab232a.js.map": "/SportVorkug/static/js/main.14ab232a.js.map",
-    "787.bf4ab41e.chunk.js.map": "/SportVorkug/static/js/787.bf4ab41e.chunk.js.map"
+    "main.css": "/SportVokrug/static/css/main.8e9f8c24.css",
+    "main.js": "/SportVokrug/static/js/main.49a766a5.js",
+    "static/js/787.bf4ab41e.chunk.js": "/SportVokrug/static/js/787.bf4ab41e.chunk.js",
+    "index.html": "/SportVokrug/index.html",
+    "static/media/clock.svg": "/SportVokrug/static/media/clock.1a0157c1a6c2b970308506ececd752fd.svg",
+    "main.8e9f8c24.css.map": "/SportVokrug/static/css/main.8e9f8c24.css.map",
+    "main.49a766a5.js.map": "/SportVokrug/static/js/main.49a766a5.js.map",
+    "787.bf4ab41e.chunk.js.map": "/SportVokrug/static/js/787.bf4ab41e.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.8e9f8c24.css",
-    "static/js/main.14ab232a.js"
+    "static/js/main.49a766a5.js"
   ]
 }
