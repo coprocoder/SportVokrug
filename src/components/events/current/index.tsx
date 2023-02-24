@@ -1,11 +1,12 @@
 import React from "react";
 
 import DateLabel from "../../dateLabel";
+import {IEventProps} from "../types";
 import AnnounceWidget from "./announceWidget";
 
 import "./index.scss";
 
-const CurrentEventWidget = ({eventInfo}) => {
+const CurrentEventWidget = ({eventInfo}: IEventProps) => {
   return (
     <div className="eventCurrent">
       <div className="eventCurrent-content">

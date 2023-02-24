@@ -7,8 +7,14 @@ import {
 import "react-circular-progressbar/dist/styles.css";
 
 import "./index.scss";
+import TimerModes, {ITimerMode} from "./modes";
 
-const CircularTimer = ({startTime, config}) => {
+interface TimerProps {
+  startTime: string;
+  config: ITimerMode;
+}
+
+const CircularTimer = ({startTime, config}: TimerProps) => {
   const [value, setValue] = useState(calcProgressValue());
 
   useEffect(() => {
@@ -18,7 +24,7 @@ const CircularTimer = ({startTime, config}) => {
   }, [startTime, config]);
 
   function calcProgressValue() {
-    const deltaMs = new Date(startTime) - new Date();
+    const deltaMs = new Date(startTime).getTime() - new Date().getTime();
     let fullCircleInterval = 0;
     if (config === TimerModes.DAY) {
       fullCircleInterval = TimerModes.DAY.interval * 7;
@@ -54,29 +60,6 @@ const CircularTimer = ({startTime, config}) => {
       </CircularProgressbarWithChildren>
     </div>
   );
-};
-
-export const TimerModes = {
-  DAY: {
-    lineColor: "#0062B5",
-    label: "дней",
-    interval: 1000 * 60 * 60 * 24,
-  },
-  HOUR: {
-    lineColor: "#D62F0D",
-    label: "часов",
-    interval: 1000 * 60 * 60,
-  },
-  MINUTE: {
-    lineColor: "#FDAE47",
-    label: "минут",
-    interval: 1000 * 60,
-  },
-  SECOND: {
-    lineColor: "#51ACD8",
-    label: "секунд",
-    interval: 1000,
-  },
 };
 
 export default CircularTimer;

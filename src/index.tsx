@@ -1,0 +1,21 @@
+import React from "react";
+import ReactDOM from "react-dom/client";
+
+import reportWebVitals from "./reportWebVitals";
+import App from "./App";
+
+import "./index.scss";
+import "./Text.scss";
+
+if (process.env.NODE_ENV === "production") {
+  console.log = () => {};
+  console.error = () => {};
+  console.debug = () => {};
+}
+
+const root = ReactDOM.createRoot(
+  document.getElementById("root") as HTMLElement
+);
+root.render(<App />);
+
+reportWebVitals();

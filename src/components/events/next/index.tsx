@@ -1,10 +1,11 @@
 import React from "react";
 
 import DateNote from "../../dateLabel";
+import {IEventProps} from "../types";
 
 import "./index.scss";
 
-const NextEventWidget = ({eventInfo}) => {
+const NextEventWidget = ({eventInfo}: IEventProps) => {
   return (
     <div className="eventNext">
       {eventInfo && (

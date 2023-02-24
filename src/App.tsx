@@ -1,17 +1,20 @@
-import React, {useContext, useEffect} from "react";
+import React, {useEffect} from "react";
+import {observer} from "mobx-react-lite";
 
 import DatetimeWidget from "./components/datetimeWidget";
 
-import "./App.scss";
 import CurrentEventWidget from "./components/events/current";
 import NextEventWidget from "./components/events/next";
-import {EventsContext} from "./contexts/EventsContext";
+import events from "./store/events";
 
-function App() {
-  const {events} = useContext(EventsContext);
-  const hasEvents = !!events.length;
+import "./App.scss";
+
+const App = observer(() => {
+  const hasEvents = !!events.items.length;
 
   useEffect(() => {
+    events.updateEventsFromAPI();
+
     // For handle mobile screen height
     const handleResize = () => {
       let vh = window.innerHeight * 0.01;
@@ -24,11 +27,11 @@ function App() {
 
   return (
     <div className="App">
-      <DatetimeWidget hasEvents={hasEvents} />
-      {hasEvents && <CurrentEventWidget eventInfo={events[0]} />}
-      {hasEvents && <NextEventWidget eventInfo={events[1]} />}
+      <DatetimeWidget />
+      {hasEvents && <CurrentEventWidget eventInfo={events.items[0]} />}
+      {hasEvents && <NextEventWidget eventInfo={events.items[1]} />}
     </div>
   );
-}
+});
 
 export default App;

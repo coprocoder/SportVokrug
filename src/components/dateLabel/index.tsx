@@ -1,7 +1,15 @@
 import React, {useEffect, useState} from "react";
 import "./index.scss";
 
-const DateLabel = ({dtStart = new Date().toISOString(), dtEnd = dtStart}) => {
+interface IDateLabel {
+  dtStart: string;
+  dtEnd: string;
+}
+
+const DateLabel = ({
+  dtStart = new Date().toISOString(),
+  dtEnd = dtStart,
+}: IDateLabel) => {
   const [timeLabel, setTimeLabel] = useState(dtStart);
 
   useEffect(() => {

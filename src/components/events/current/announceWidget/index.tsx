@@ -1,14 +1,16 @@
-import React, {useContext, useEffect, useState} from "react";
+import React, {useEffect, useState} from "react";
 
-import CircularTimer, {TimerModes} from "./circularTimer";
+import CircularTimer from "./circularTimer";
 import EventStartedPlug from "./startedPlug";
 
+import {observer} from "mobx-react-lite";
 import "./index.scss";
-import {EventsContext} from "../../../../contexts/EventsContext";
+import {IEventProps} from "../../types";
+import events from "../../../../store/events";
+import TimerModes from "./circularTimer/modes";
 
-const AnnounceWidget = ({eventInfo}) => {
+const AnnounceWidget = observer(({eventInfo}: IEventProps) => {
   const [isStarted, setStarted] = useState(checkStarted());
-  const {events, setEvents, updateEventsFromAPI} = useContext(EventsContext);
 
   function checkStarted() {
     return (
@@ -23,9 +25,9 @@ const AnnounceWidget = ({eventInfo}) => {
       if (started != isStarted) {
         // If already started and now finished
         if (isStarted) {
-          setEvents(events.slice(1));
-          if (events.length < 3) {
-            updateEventsFromAPI();
+          events.items = events.items.slice(1);
+          if (events.items.length < 3) {
+            events.updateEventsFromAPI();
           }
         }
         setStarted(started);
@@ -60,6 +62,6 @@ const AnnounceWidget = ({eventInfo}) => {
       )}
     </div>
   );
-};
+});
 
 export default AnnounceWidget;

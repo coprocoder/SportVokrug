@@ -1,10 +1,14 @@
 import React, {useState, useEffect} from "react";
+import events from "../../store/events";
 
 import "./index.scss";
 
-const DatetimeWidget = ({hasEvents}) => {
+const DatetimeWidget = () => {
+  const hasEvents = events.items.length;
   return (
-    <div className={`datetime ${hasEvents ? "datetime-mini" : "datetime-full"}`}>
+    <div
+      className={`datetime ${hasEvents ? "datetime-mini" : "datetime-full"}`}
+    >
       <TimeComponent />
       <DateComponent />
     </div>
@@ -36,7 +40,7 @@ const DateComponent = () => {
   const [weekday, setWeekday] = useState(getWeekday());
 
   function getDate() {
-    const dateOptions = {
+    const dateOptions: Intl.DateTimeFormatOptions = {
       day: "numeric",
       month: "long",
     };
@@ -44,7 +48,7 @@ const DateComponent = () => {
   }
 
   function getWeekday() {
-    const dateOptions = {
+    const dateOptions: Intl.DateTimeFormatOptions = {
       weekday: "long",
     };
     return new Date().toLocaleDateString("ru-RU", dateOptions);
