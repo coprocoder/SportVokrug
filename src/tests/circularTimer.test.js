@@ -1,7 +1,6 @@
 import {render} from "@testing-library/react";
-import CircularTimer, {
-  TimerModes,
-} from "../components/events/current/announceWidget/circularTimer";
+import CircularTimer from "../components/events/current/announceWidget/circularTimer";
+import TimerModes from "../components/events/current/announceWidget/circularTimer/modes";
 
 /**
  * Circular timer tests
@@ -16,7 +15,10 @@ describe("Timer week", () => {
       <CircularTimer startTime={dt} config={TimerModes.DAY} />
     );
 
-    const deltaDaysInMs = (dt - new Date()) % (7 * TimerModes.DAY.interval);
+    const deltaMs = dt - new Date().getTime();
+    const actualDeltaMs = deltaMs > 0 ? deltaMs : 0;
+
+    const deltaDaysInMs = actualDeltaMs % (7 * TimerModes.DAY.interval);
     const expectedDaysVal = Math.floor(deltaDaysInMs / TimerModes.DAY.interval);
 
     const num = container.querySelector(".circularTimer-value").textContent;
@@ -45,7 +47,9 @@ describe("Timer hours", () => {
       <CircularTimer startTime={dt} config={TimerModes.HOUR} />
     );
 
-    const deltaDaysInMs = (dt - new Date()) % TimerModes.DAY.interval;
+    const deltaMs = dt - new Date().getTime();
+    const actualDeltaMs = deltaMs > 0 ? deltaMs : 0;
+    const deltaDaysInMs = actualDeltaMs % TimerModes.DAY.interval;
     const expectedDaysVal = Math.floor(
       deltaDaysInMs / TimerModes.HOUR.interval
     );

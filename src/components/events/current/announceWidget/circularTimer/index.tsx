@@ -25,6 +25,7 @@ const CircularTimer = ({startTime, config}: TimerProps) => {
 
   function calcProgressValue() {
     const deltaMs = new Date(startTime).getTime() - new Date().getTime();
+    const actualDeltaMs = deltaMs > 0 ? deltaMs : 0;
     let fullCircleInterval = 0;
     if (config === TimerModes.DAY) {
       fullCircleInterval = TimerModes.DAY.interval * 7;
@@ -36,7 +37,7 @@ const CircularTimer = ({startTime, config}: TimerProps) => {
       fullCircleInterval = TimerModes.MINUTE.interval;
     }
 
-    let usefulTime = deltaMs % fullCircleInterval;
+    let usefulTime = actualDeltaMs % fullCircleInterval;
     let progress = (usefulTime / fullCircleInterval) * 100;
     const number = Math.floor(usefulTime / config.interval);
 
