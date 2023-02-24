@@ -11,7 +11,9 @@
 
 <ul>
 	<li>HTML, SCSS</li>
-	<li>React</li>
+	<li>React, TypeScript</li>
+	<li>MobX</li>
+	<li>Jest</li>
  </ul>
 
 Демо: https://coprocoder.github.io/SportVokrug/  
