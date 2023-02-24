@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/SportVokrug/static/css/main.8e9f8c24.css",
-    "main.js": "/SportVokrug/static/js/main.49a766a5.js",
+    "main.css": "/SportVokrug/static/css/main.97363ba2.css",
+    "main.js": "/SportVokrug/static/js/main.5cb47f1a.js",
     "static/js/787.bf4ab41e.chunk.js": "/SportVokrug/static/js/787.bf4ab41e.chunk.js",
     "index.html": "/SportVokrug/index.html",
     "static/media/clock.svg": "/SportVokrug/static/media/clock.1a0157c1a6c2b970308506ececd752fd.svg",
-    "main.8e9f8c24.css.map": "/SportVokrug/static/css/main.8e9f8c24.css.map",
-    "main.49a766a5.js.map": "/SportVokrug/static/js/main.49a766a5.js.map",
+    "main.97363ba2.css.map": "/SportVokrug/static/css/main.97363ba2.css.map",
+    "main.5cb47f1a.js.map": "/SportVokrug/static/js/main.5cb47f1a.js.map",
     "787.bf4ab41e.chunk.js.map": "/SportVokrug/static/js/787.bf4ab41e.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.8e9f8c24.css",
-    "static/js/main.49a766a5.js"
+    "static/css/main.97363ba2.css",
+    "static/js/main.5cb47f1a.js"
   ]
 }
