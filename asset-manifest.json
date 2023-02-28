@@ -1,16 +1,16 @@
 {
   "files": {
     "main.css": "/SportVokrug/static/css/main.97363ba2.css",
-    "main.js": "/SportVokrug/static/js/main.2e772c14.js",
+    "main.js": "/SportVokrug/static/js/main.04fe34eb.js",
     "static/js/787.bf4ab41e.chunk.js": "/SportVokrug/static/js/787.bf4ab41e.chunk.js",
     "index.html": "/SportVokrug/index.html",
     "static/media/clock.svg": "/SportVokrug/static/media/clock.1a0157c1a6c2b970308506ececd752fd.svg",
     "main.97363ba2.css.map": "/SportVokrug/static/css/main.97363ba2.css.map",
-    "main.2e772c14.js.map": "/SportVokrug/static/js/main.2e772c14.js.map",
+    "main.04fe34eb.js.map": "/SportVokrug/static/js/main.04fe34eb.js.map",
     "787.bf4ab41e.chunk.js.map": "/SportVokrug/static/js/787.bf4ab41e.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.97363ba2.css",
-    "static/js/main.2e772c14.js"
+    "static/js/main.04fe34eb.js"
   ]
 }
