@@ -26,14 +26,12 @@ const AnnounceWidget = observer(({eventInfo}: IEventProps) => {
         // If already started and now finished
         if (isStarted) {
           events.items = events.items.slice(1);
-          if (events.items.length < 3) {
-            events.updateEventsFromAPI();
-          }
         }
         setStarted(started);
         clearInterval(_inter);
       }
     }, 1000);
+    return () => clearInterval(_inter);
   }, [eventInfo, isStarted]);
 
   return (

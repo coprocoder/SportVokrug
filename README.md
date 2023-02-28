@@ -13,6 +13,7 @@
 	<li>HTML, SCSS</li>
 	<li>React, TypeScript</li>
 	<li>MobX</li>
+	<li>GraphQL, Apollo</li>
 	<li>Jest</li>
  </ul>
 
